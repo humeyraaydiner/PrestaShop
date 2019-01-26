@@ -28,6 +28,12 @@ public class HomePage extends TestBase {
     @FindBy(xpath = "//span[@class='ajax_cart_no_product']")
     public WebElement cartHeader;
 
+    @FindBy(css = "span[title='Continue shopping']")
+    public WebElement continueShoppingButton;
+
+    @FindBy(css = ".ajax_cart_block_remove_link")
+    public WebElement removeFromCartButton;
+
     public WebElement getProduct(String productName) {
         String xpath = "(//h5//a[@title='"+productName+"'])[1]";
         return Driver.getDriver().findElement(By.xpath(xpath));

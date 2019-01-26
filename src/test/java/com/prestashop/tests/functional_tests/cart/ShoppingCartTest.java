@@ -7,7 +7,7 @@ import org.testng.annotations.*;
 import java.util.*;
 import static org.testng.Assert.*;
 
-public class ShoppingCartTests extends TestBase {
+public class ShoppingCartTest extends TestBase {
     HomePage homePage;
     ProductPage productPage;
     CommonPage commonPage;

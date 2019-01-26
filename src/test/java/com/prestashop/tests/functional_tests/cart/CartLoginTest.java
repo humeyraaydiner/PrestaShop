@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 
-public class CartLoginTests extends TestBase {
+public class CartLoginTest extends TestBase {
     HomePage homePage;
     ProductPage productPage;
     CommonPage commonPage;
