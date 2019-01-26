@@ -6,9 +6,10 @@ import com.prestashop.utilities.ConfigurationReader;
 import com.prestashop.utilities.TestBase;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
-import static org.testng.Assert.*;
 
-public class CartLoginTests extends TestBase {
+import static org.testng.Assert.assertTrue;
+
+public class CartLogoutTests extends TestBase {
     HomePage homePage;
     ProductPage productPage;
     CommonPage commonPage;
@@ -31,26 +32,34 @@ public class CartLoginTests extends TestBase {
     }
 
     /**
-     * Cart LoginTest
+     * Cart LogoutTest
      * 1.Open browser
      * 2.Go to http://automationpractice.com/index.php
-     * 3.Add any product in the homepage to the cart
-     * 4.Hover over the cart icon
-     * 5.Verify that cart contains the product
-     * 6.Login as any valid user
-     * 7.Hover over the cart icon
-     * 8.Verify that cart information is same as step 5
+     * 3.Login as any valid user
+     * 4.Go back to home page
+     * 5.Add any product in the homepage to the cart
+     * 6.Hover over the cart icon
+     * 7.Verify that cart contains the product
+     * 8.Log out
+     * 9.Verify the cart contains the word empty
      */
 
     @Test
-    public void cartLogin() {
+    public void cartLogout() {
         driver.get(ConfigurationReader.getProperty("url"));
 
+        //Login as any valid user
+        commonPage.signInButton.click();
+        loginPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
+
+        //Go back to home page
+        commonPage.companyLogo.click();
+
         //Add any product in the homepage to the cart
-        WebElement product = homePage.getProduct("Printed Summer Dress");
+        WebElement product = homePage.getProduct("Printed Chiffon Dress");
         String productName = product.getText();
         action.moveToElement(product).perform();
-        homePage.getAddToCartIdx(5).click();
+        homePage.getAddToCartIdx(7).click();
 
         productPage.closeIcon.click();
 
@@ -61,15 +70,12 @@ public class CartLoginTests extends TestBase {
         String cartProductName = commonPage.shoppingCartProductName.getText().replace(".", "");
         assertTrue(productName.contains(cartProductName));
 
-        //Login as any valid user
-        commonPage.signInButton.click();
-        loginPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
-
-        //Hover over the cart icon
-        action.moveToElement(commonPage.cartIcon).perform();
-
-        //Verify that cart information is same as step 5
-        assertTrue(productName.contains(cartProductName));
+        //Log out and verify the cart contains the word empty
+        loginPage.signOutButton.click();
+        BrowserUtils.waitFor(2);
+        System.out.println(homePage.cartHeader.getText());
+        assertTrue(homePage.cartHeader.getText().contains("empty"));
     }
+
 
 }

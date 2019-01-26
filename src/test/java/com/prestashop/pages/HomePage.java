@@ -25,13 +25,16 @@ public class HomePage extends TestBase {
     @FindBy(xpath = "(//a[@title='Printed Summer Dress'])[2]")
     public WebElement saleProduct;
 
+    @FindBy(xpath = "//span[@class='ajax_cart_no_product']")
+    public WebElement cartHeader;
+
     public WebElement getProduct(String productName) {
         String xpath = "(//h5//a[@title='"+productName+"'])[1]";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
 
     public WebElement getAddToCartIdx(int index) {
-        String xpath = "//ul[@id='homefeatured']//li[" + index + "]//span[text()='Add to cart']";
+        String xpath = "//ul[@id='homefeatured']//li[" + index + "]//span[.='Add to cart']";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
 
