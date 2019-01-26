@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Presta Shop Tests" verbose="2">
+
+    <test name="all tests">
+        <packages>
+            <package name="com.prestashop.tests.*"/>
+            <package name="com.prestashop.tests.smoke_tests"/>
+            <package name="com.prestashop.tests.functional_tests"/>
+        </packages>
+
+        <!--<classes>-->
+            <!--<class name="com.">-->
+
+            <!--</class>-->
+        <!--</classes>-->
+
+    </test>
+
+</suite>
+
+
