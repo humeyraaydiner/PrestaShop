@@ -43,7 +43,7 @@ public class ProductPage {
     @FindBy(id = "layer_cart_product_price")
     public WebElement cartPriceElm;
 
-    @FindBy(xpath = "//div[@class='clearfix']//div//span[@class='cross']")
+    @FindBy(css = ".cross")
     public WebElement closeIcon;
 
 }

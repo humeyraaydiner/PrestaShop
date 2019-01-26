@@ -3,7 +3,7 @@ package com.prestashop.pages;
 import com.prestashop.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.Select;
 
 public class RegistrationPage {
@@ -36,9 +36,6 @@ public class RegistrationPage {
 
     @FindBy(id = "postcode")
     public WebElement postCode;
-
-    @FindBy(id = "id_country")
-    public WebElement country;
 
     @FindBy(id = "phone_mobile")
     public WebElement mobilePhone;

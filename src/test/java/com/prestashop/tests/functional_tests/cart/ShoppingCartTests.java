@@ -4,10 +4,7 @@ import com.prestashop.pages.*;
 import com.prestashop.utilities.*;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 import static org.testng.Assert.*;
 
 public class ShoppingCartTests extends TestBase {

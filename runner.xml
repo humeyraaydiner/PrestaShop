@@ -3,19 +3,8 @@
 
     <test name="all tests">
         <packages>
-            <package name="com.prestashop.tests.*"/>
-            <package name="com.prestashop.tests.smoke_tests"/>
-            <package name="com.prestashop.tests.functional_tests"/>
+            <package name=".*"/>
         </packages>
-
-        <!--<classes>-->
-            <!--<class name="com.">-->
-
-            <!--</class>-->
-        <!--</classes>-->
-
     </test>
 
 </suite>
-
-

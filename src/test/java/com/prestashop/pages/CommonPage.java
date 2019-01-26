@@ -26,4 +26,8 @@ public class CommonPage {
     @FindBy(css = ".price.cart_block_total")
     public WebElement totalPriceText;
 
+    @FindBy(css = ".cart_block_product_name")
+    public WebElement shoppingCartProductName;
+
+
 }
