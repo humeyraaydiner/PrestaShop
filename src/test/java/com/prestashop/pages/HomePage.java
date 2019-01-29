@@ -34,6 +34,10 @@ public class HomePage extends TestBase {
     @FindBy(css = ".ajax_cart_block_remove_link")
     public WebElement removeFromCartButton;
 
+    @FindBy(xpath = "//a[@title='Proceed to checkout']/span")
+    public WebElement proceedToCheckoutButton;
+
+
     public WebElement getProduct(String productName) {
         String xpath = "(//h5//a[@title='"+productName+"'])[1]";
         return Driver.getDriver().findElement(By.xpath(xpath));

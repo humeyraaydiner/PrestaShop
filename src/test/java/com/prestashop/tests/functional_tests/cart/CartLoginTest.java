@@ -1,9 +1,7 @@
 package com.prestashop.tests.functional_tests.cart;
 
 import com.prestashop.pages.*;
-import com.prestashop.utilities.BrowserUtils;
-import com.prestashop.utilities.ConfigurationReader;
-import com.prestashop.utilities.TestBase;
+import com.prestashop.utilities.*;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
